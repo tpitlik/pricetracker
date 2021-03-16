@@ -1,0 +1,36 @@
+.outofstockmsg{
+  width: 100%;
+  height: 150px;
+  line-height: 130px;
+  font-size: 1.2rem;
+}
+
+mat-card-title > span {
+  font-size: 13px;
+  font-weight: bold;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  max-height: 20px;
+  display: block;
+  overflow:hidden;
+}
+
+button:focus { outline: none; }
+
+a {
+  color: slategrey;
+  font-family: "Signika", Arial, Helvetica, sans-serif;
+}
+
+a:hover {
+  color: slateblue;
+}
+
+::ng-deep .mat-button-focus-overlay {
+  background-color:transparent !important;
+}
+
+.badge {
+  font-size: 12px;
+}
+
+

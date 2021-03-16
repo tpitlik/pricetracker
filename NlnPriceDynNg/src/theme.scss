@@ -1,0 +1,24 @@
+@import "~@angular/material/theming";
+@include mat-core();
+
+
+$custom-theme-primary: mat-palette($mat-indigo);
+$custom-theme-accent: mat-palette($mat-pink, A200, A100, A400);
+$custom-theme-warn: mat-palette($mat-red);
+$custom-background-color: #f8f8f8;
+$custom-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
+
+$background: map-get($custom-theme, background);
+$background: map-merge($background, (background: $custom-background-color));
+$custom-theme: map-merge($custom-theme, (background: $background));
+
+@include angular-material-theme($custom-theme);
+
+$alternative-theme-primary: mat-palette($mat-indigo);
+$alternative-theme-accent:  mat-palette($mat-orange, A200, A100, A400);
+$alternative-theme-warn: mat-palette($mat-red);
+$alternative-theme:   mat-light-theme($alternative-theme-primary, $alternative-theme-accent, $alternative-theme-warn);
+
+.alternative {
+  @include angular-material-theme($alternative-theme);
+}

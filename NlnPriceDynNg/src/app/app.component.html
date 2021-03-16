@@ -1,0 +1,7 @@
+<div class="container-fluid mat-app-background m-0 p-0">
+<app-header></app-header>
+<div class="container" style="min-height: calc(100vh - 130px);">
+  <router-outlet (activate)="onActivate($event)"></router-outlet>
+</div>
+<app-footer></app-footer>
+</div>

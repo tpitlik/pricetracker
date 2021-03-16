@@ -1,0 +1,19 @@
+<div *ngIf="isLoading" fxLayout="row" fxLayoutAlign="center center" style="min-height: 80vh;">
+  <mat-spinner diameter="50"></mat-spinner>
+</div>
+
+<div *ngIf="!isLoading" fxLayout="row wrap" fxLayoutGap="0%">
+  <div *ngFor="let p of products" class="productcard col-sm-6 col-md-6 col-lg-4 col-xl-3">
+    <app-product-list-item [product]="p"></app-product-list-item>
+  </div>
+  <div class="productcard col-sm-6 col-md-6 col-lg-4 col-xl-3">
+    <mat-card style="min-width: 100px;">
+      <mat-card-content style="text-align: center;">
+        <div class="addproductcard">
+          <button mat-fab color="accent" [routerLink]="['/products/new']"><span style="font-size: 30px">+</span>
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

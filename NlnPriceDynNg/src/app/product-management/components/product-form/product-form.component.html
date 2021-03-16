@@ -1,0 +1,25 @@
+
+  <div class="container d-flex justify-content-center pt-5">
+      <form (ngSubmit)="productForm.form.valid && onSubmit()" #productForm="ngForm" style="width: 600px;">
+        <mat-card>
+          <mat-card-title>Добавление нового товара</mat-card-title>
+                <mat-form-field class="w-100">
+                  <input matInput placeholder="Описание" type="text" id="title" aria-describedby="titleLabel"
+                         [(ngModel)]="request.title" name="title" class="full-width" required>
+                </mat-form-field>
+                <mat-form-field class="w-100">
+                  <input matInput placeholder="Ссылке в каталоге" type="text" id="link" aria-describedby="linkLabel"
+                         [(ngModel)]="request.linkUrl" name="link" class="full-width" required>
+                </mat-form-field>
+                <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+                <mat-card-actions>
+                  <div class="alternative text-center">
+                    <mat-spinner-button [options]="btnOpts"></mat-spinner-button>
+                    <button mat-raised-button color="primary" class="mr-1" [routerLink]="['/products']">Назад</button>
+                  </div>
+                </mat-card-actions>
+        </mat-card>
+      </form>
+  </div>
+
+

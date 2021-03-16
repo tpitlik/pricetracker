@@ -1,0 +1,22 @@
+<div class="container text-center">Изменение цены на товар</div>
+<highcharts-chart *ngIf="!isLoading"
+  [Highcharts]="Highcharts"
+  [constructorType]="chartConstructor"
+  [options]="chartOptions"
+  [(update)]="updateFlag"
+  style="display: block;"
+></highcharts-chart>
+<div *ngIf="isLoading" fxLayout="row" fxLayoutAlign="center center" style="min-height: 35vh;">
+  <mat-spinner diameter="50"></mat-spinner>
+</div>
+<div class="container text-right">
+  <mat-form-field class="w-25">
+    <mat-select [(value)]="periodSelected" (selectionChange)="updateChart($event)">
+      <mat-option value="week">Неделя</mat-option>
+      <mat-option value="month">Месяц</mat-option>
+      <mat-option value="halfyear">6 месяцев</mat-option>
+      <mat-option value="year">Год</mat-option>
+      <mat-option value="all">Все время</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

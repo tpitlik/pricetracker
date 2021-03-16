@@ -1,0 +1,29 @@
+
+  <div class="container d-flex justify-content-center pt-5">
+      <form (ngSubmit)="loginForm.form.valid && onSubmit()" #loginForm="ngForm">
+        <mat-card class="loginform">
+          <mat-card-title>Вход</mat-card-title>
+          <app-messages></app-messages>
+                <mat-form-field class="w-100">
+                  <input matInput placeholder="Имя пользователя" type="text" id="name" aria-describedby="nameLabel"
+                         [(ngModel)]="userInfo.UserName" name="name" #name="ngModel" required>
+                </mat-form-field>
+                <mat-form-field class="w-100">
+                  <input matInput placeholder="Пароль" type="password" id="password" aria-describedby="passwordLabel"
+                         [(ngModel)]="userInfo.Password" name="password" #password="ngModel" class="full-width"
+                         required>
+                </mat-form-field>
+          <div *ngIf="errors" class="alert alert-danger">
+            <div *ngFor="let error of errors">
+              <span [innerHTML]="error"></span>
+            </div>
+          </div>
+                <mat-card-actions>
+                  <div style="text-align: center" class="alternative">
+                    <mat-spinner-button [options]="btnOpts"></mat-spinner-button>
+                  </div>
+                </mat-card-actions>
+        </mat-card>
+      </form>
+  </div>
+

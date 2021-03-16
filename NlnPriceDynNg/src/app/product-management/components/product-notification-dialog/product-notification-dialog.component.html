@@ -1,0 +1,24 @@
+<mat-dialog-content>
+    <mat-form-field class="w-100">
+      <input matInput placeholder="Название товара" type="text" id="title" aria-describedby="titleLabel"
+             [(ngModel)]="notification.ProductTitle" name="title" class="full-width" readonly>
+    </mat-form-field>
+    <mat-form-field class="w-100">
+      <input matInput placeholder="Минимальная цена в каталоге (руб.)" type="text" id="minprice" aria-describedby="minpriceLabel"
+             [(ngModel)]="notification.CurrentMinPrice" name="minprice" class="full-width" readonly>
+    </mat-form-field>
+    <mat-form-field class="w-100">
+      <input matInput placeholder="Нижний порог цены (руб.)" type="text" id="minpricelimit" aria-describedby="minpricelimitLabel"
+             [(ngModel)]="notification.LowPriceLimit" name="minpricelimit" class="full-width" required appNumeric numericType="decimal">
+    </mat-form-field>
+    <section>
+      <mat-slide-toggle [(ngModel)]="notification.IsActive" name="isactive">Оповещать о приближении цены к порогу</mat-slide-toggle>
+    </section>
+    <section>
+      <mat-slide-toggle [(ngModel)]="notification.TriggerOnce" name="triggeronce">Однократное оповещение</mat-slide-toggle>
+    </section>
+</mat-dialog-content>
+<mat-dialog-actions class="justify-content-center">
+  <button mat-raised-button color="accent" [mat-dialog-close]="notification">Сохранить</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="">Отмена</button>
+</mat-dialog-actions>

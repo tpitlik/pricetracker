@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFrameworkCoreMock.Moq" Version="1.0.0.25" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6" />
+    <PackageReference Include="Moq" Version="4.12.0" />
+    <PackageReference Include="nunit" Version="3.12.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.14.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NlnrPriceDyn.DataAccess.Common\NlnrPriceDyn.DataAccess.Common.csproj" />
+    <ProjectReference Include="..\NlnrPriceDyn.DataAccess\NlnrPriceDyn.DataAccess.csproj" />
+    <ProjectReference Include="..\NlnrPriceDyn.Logic.Common\NlnrPriceDyn.Logic.Common.csproj" />
+    <ProjectReference Include="..\NlnrPriceDyn.Logic\NlnrPriceDyn.Logic.csproj" />
+    <ProjectReference Include="..\NlnrPriceDyn.Web\NlnrPriceDyn.Web.csproj" />
+  </ItemGroup>
+
+</Project>

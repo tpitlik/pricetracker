@@ -1,0 +1,10 @@
+<div class="top sticky-top">
+  <mat-toolbar color="primary">
+    <span>Nlnr price tracker</span><span class="badge badge-warning ml-1">Beta</span>
+    <span class="fill-space"></span>
+    <button mat-flat-button color="primary" [routerLink]="['/products']"  *ngIf="signedIn | async">Трекер</button>
+    <button mat-flat-button color="primary" [routerLink]="['/login']" *ngIf="(signedIn | async) === false">Вход</button>
+    <button mat-flat-button color="primary" [routerLink]="['/register']" *ngIf="(signedIn | async) === false">Регистрация</button>
+    <button mat-flat-button color="primary" (click)="signout()" *ngIf="signedIn | async">Выйти</button>
+  </mat-toolbar>
+</div>

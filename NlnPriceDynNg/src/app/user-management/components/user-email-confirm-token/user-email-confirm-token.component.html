@@ -1,0 +1,14 @@
+<div class="container d-flex justify-content-center pt-5 w-75">
+  <div class="jumbotron mt-0 p-3">
+    <h5>Активация учетной записи</h5>
+    <hr class="my-4">
+    <p class="lead">
+      На адрес вашей электронной почты, указанный при регистрации, будет повторно отправлена ссылка для активации учетной записи.
+    </p>
+    <div *ngIf="error" class="alert alert-danger">
+      {{error}}
+    </div>
+    <app-messages></app-messages>
+    <div class="alternative" align="center"><mat-spinner-button [options]="btnOpts" (click)="resendConfirmationEmail()"></mat-spinner-button></div>
+  </div>
+</div>
